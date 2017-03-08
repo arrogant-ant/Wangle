@@ -26,7 +26,7 @@ public class Splash extends Activity {
                     }
                 };
          my_Thread.start();
-//sas
+//sa
 
     }
 }
