@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -16,6 +17,8 @@ public class Login extends AppCompatActivity {
 
     String loginID, loginPass;
     EditText empID , pass;
+    TextView res;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +26,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         empID=(EditText)findViewById(R.id.empID);
         pass=(EditText)findViewById(R.id.password);
-
+        res= (TextView)findViewById(R.id.result);
     }
 
     public void logIn(View view) {
@@ -32,8 +35,13 @@ public class Login extends AppCompatActivity {
         loginID= empID.getText().toString();
         loginPass=pass.getText().toString();
         String method="Login";
+        Log.d("check 1.5", "login: ");
         BackgroundTask backgroundTask= new BackgroundTask(this);
         backgroundTask.execute(method,loginID,loginPass);
         Log.d("check 2", "login: ");
+    }
+    public void changeintent(){
+        Log.d("check 6", "login: ");
+        res.setText("dsdsds");
     }
 }

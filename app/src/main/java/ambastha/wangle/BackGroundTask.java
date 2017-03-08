@@ -24,20 +24,22 @@ import java.net.URLEncoder;
 
 public class BackgroundTask extends AsyncTask<String,String,String> {
     Context ctx;
-    AlertDialog alertDialog;
+    //AlertDialog alertDialog;
     String method;
 
     BackgroundTask(Context ctx) {
         ctx = this.ctx;
-
+        Log.d("check 2.5", "login: ");
 
     }
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-       alertDialog= new AlertDialog.Builder(ctx).create();
-        alertDialog.setTitle("Login Info");
+      // alertDialog= new AlertDialog.Builder(ctx).create();
+        Log.d("check 2.7", "login: ");
+      //  alertDialog.setTitle("Login Info");
+        Log.d("check 2.9", "login: ");
     }
 
     @Override
@@ -100,11 +102,10 @@ public class BackgroundTask extends AsyncTask<String,String,String> {
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
-        //if (method.equals("Login")) {
-           alertDialog.setMessage(result);
-           // Toast.makeText(this.ctx,result,Toast.LENGTH_LONG).show();
+        Log.d("check 5", "login: ");
 
-        //}
+      Login lo= new Login();
+        lo.changeintent();
     }
 }
 
