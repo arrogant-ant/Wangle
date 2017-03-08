@@ -9,7 +9,7 @@
 <string name="slogan">The Resource Management App</string>
 
 
-<string name="hint_email">Email</string>
+<string name="hint_empID">Employee I.D.</string>
 <string name="hint_password">Password</string>
 <string name="hint_name">Fullname</string>
 <string name="btn_login">LOGIN</string>

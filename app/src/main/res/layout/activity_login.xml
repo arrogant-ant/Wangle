@@ -16,12 +16,12 @@
         android:paddingRight="20dp" >
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/empID"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@color/white"
-            android:hint="@string/hint_email"
+            android:hint="@string/hint_empID"
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:singleLine="true"
@@ -50,7 +50,8 @@
             android:layout_marginTop="20dip"
             android:background="@color/btn_login_bg"
             android:text="@string/btn_login"
-            android:textColor="@color/btn_login" />
+            android:textColor="@color/btn_login"
+            android:onClick="logIn"/>
 
         <!-- Link to Login Screen -->
 

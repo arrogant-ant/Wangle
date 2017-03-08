@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Connection"></activity>
+        <activity android:name=".Login" />
     </application>
 
 </manifest>
