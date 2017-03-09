@@ -1,6 +1,8 @@
 package ambastha.wangle;
 
 import android.app.Activity;
+import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -8,6 +10,18 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
 
 /**
  * Created by Sabita_Sant on 09/03/17.
@@ -36,12 +50,11 @@ public class Login extends AppCompatActivity {
         loginPass=pass.getText().toString();
         String method="Login";
         Log.d("check 1.5", "login: ");
-        BackgroundTask backgroundTask= new BackgroundTask(this);
+        BackgroundTask backgroundTask= new BackgroundTask(this,this);
         backgroundTask.execute(method,loginID,loginPass);
         Log.d("check 2", "login: ");
     }
-    public void changeintent(){
-        Log.d("check 6", "login: ");
-        res.setText("dsdsds");
-    }
+
+
+
 }

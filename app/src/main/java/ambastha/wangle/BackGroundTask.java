@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -26,10 +27,12 @@ public class BackgroundTask extends AsyncTask<String,String,String> {
     Context ctx;
     //AlertDialog alertDialog;
     String method;
+    TextView r=null;
 
-    BackgroundTask(Context ctx) {
+    BackgroundTask(Context ctx, Login l) {
         ctx = this.ctx;
         Log.d("check 2.5", "login: ");
+        r=l.res;
 
     }
 
@@ -103,9 +106,8 @@ public class BackgroundTask extends AsyncTask<String,String,String> {
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
         Log.d("check 5", "login: ");
+        r.setText(result);
 
-      Login lo= new Login();
-        lo.changeintent();
     }
 }
 
