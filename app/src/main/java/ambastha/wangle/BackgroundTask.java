@@ -84,7 +84,7 @@ public class BackgroundTask extends AsyncTask<String, String, String> {
                 String line = "";
                 StringBuffer buffer = new StringBuffer();
                 while ((line = bufferedReader.readLine()) != null) {
-                    buffer.append(line);
+                    buffer.append(line + "\n");
                 }
                 bufferedReader.close();
                 inputStream.close();
