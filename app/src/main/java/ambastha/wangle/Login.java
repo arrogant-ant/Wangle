@@ -41,9 +41,9 @@ public class Login extends AppCompatActivity {
         loginPass=pass.getText().toString();
         String method="Login";
         Log.d("check 1.5", "login: ");
-        BackgroundTask backgroundTask= new BackgroundTask(this,this);
+        BackgroundTask backgroundTask = new BackgroundTask(this.getApplicationContext(), this);
         backgroundTask.execute(method,loginID,loginPass);
-        checkLogin();
+
         Log.d("check 2", "login: ");
     }
 
@@ -51,9 +51,12 @@ public class Login extends AppCompatActivity {
         if (JSON == null) {
             Toast.makeText(this, "NO data received", Toast.LENGTH_LONG).show();
         } else {
+            Log.d("check 4", "adapter");
             Intent intent = new Intent(getApplicationContext(), DisplayRequest.class);
             intent.putExtra("json_data", JSON);
+            Log.d("check 5", "adapter");
             startActivity(intent);
+            Log.d("check 6", "adapter");
         }
     }
 
@@ -67,7 +70,7 @@ public class Login extends AppCompatActivity {
                 // JSONArray jsonArray = jsonObject.getJSONArray("Array name");
                 //JSONObject j = jsonArray.getJSONObject(0);
                 if (jsonObject.getString("status").equals("successful")) {
-                    if (jsonObject.get("is_admin").equals("true"))
+                    if ((boolean) jsonObject.get("is_admin"))
                         res.setText("hey pc");
 
                     else

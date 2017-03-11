@@ -51,7 +51,7 @@ public class BackgroundTask extends AsyncTask<String, String, String> {
 
         Log.d("check 3", "login: ");
         HttpURLConnection connection = null;
-        String loginURL = "http://wangle.16mb.com/another_try.php";
+        String loginURL = "http://wangle.16mb.com/try.php";
         method = params[0];
         if (method.equals("Login")) {
             Log.d("check 4", "login: ");
@@ -63,19 +63,19 @@ public class BackgroundTask extends AsyncTask<String, String, String> {
 
                 connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("POST");
-                connection.setDoOutput(true);
+                connection.setDoOutput(false);
                 connection.setDoInput(true);
                 connection.connect();
 
                 // writing to the server
 
-                OutputStream outputStream = connection.getOutputStream();
+              /*  OutputStream outputStream = connection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
                 String data = URLEncoder.encode("empID", "UTF-8") + "=" + URLEncoder.encode(empId, "UTF-8") + "&" + URLEncoder.encode("pass", "UTF-8") + "=" + URLEncoder.encode(pass, "UTF-8");
                 bufferedWriter.write(data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
-                outputStream.close();
+                outputStream.close();*/
 
                 // reading from the server
 
@@ -108,6 +108,7 @@ public class BackgroundTask extends AsyncTask<String, String, String> {
         super.onPostExecute(result);
         Log.d("check 5", "login: ");
         login.JSON = result;
+        login.parseJSON();
 
     }
 }

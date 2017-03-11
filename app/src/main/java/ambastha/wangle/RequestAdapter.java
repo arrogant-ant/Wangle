@@ -18,8 +18,10 @@ import java.util.List;
 
 public class RequestAdapter extends ArrayAdapter<Request> {
     List<Request> list = new ArrayList<Request>();
-    public RequestAdapter(Context context, int resource) {
+
+    public RequestAdapter(Context context, int resource, List<Request> list) {
         super(context, resource);
+        this.list = list;
     }
 
     @Override
