@@ -9,6 +9,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Created by Sabita_Sant on 09/03/17.
  */
@@ -39,6 +43,7 @@ public class Login extends AppCompatActivity {
         Log.d("check 1.5", "login: ");
         BackgroundTask backgroundTask= new BackgroundTask(this,this);
         backgroundTask.execute(method,loginID,loginPass);
+        checkLogin();
         Log.d("check 2", "login: ");
     }
 
@@ -50,6 +55,25 @@ public class Login extends AppCompatActivity {
             intent.putExtra("json_data", JSON);
             startActivity(intent);
         }
+    }
+
+    public void checkLogin() {
+        if (JSON == null) {
+            Toast.makeText(this, "NO data received", Toast.LENGTH_LONG).show();
+        } else {
+            JSONObject jsonObject = null;
+            try {
+                jsonObject = new JSONObject(JSON);
+                JSONArray jsonArray = jsonObject.getJSONArray("Array name");
+                JSONObject j = jsonArray.getJSONObject(0);
+                res.setText(j.getString("success") + j.getString("type"));
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+
     }
 
 
