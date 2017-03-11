@@ -69,6 +69,7 @@ public class Login extends AppCompatActivity {
                 res.setText(j.getString("success") + j.getString("type"));
 
             } catch (JSONException e) {
+
                 e.printStackTrace();
             }
 
