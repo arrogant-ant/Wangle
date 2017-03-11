@@ -12,4 +12,16 @@ public class Request {
         this.resType = resType;
         this.resNo = resNo;
     }
+
+    public String getSiteManager() {
+        return siteManager;
+    }
+
+    public String getResType() {
+        return resType;
+    }
+
+    public String getResNo() {
+        return resNo;
+    }
 }

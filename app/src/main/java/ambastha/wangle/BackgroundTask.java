@@ -27,12 +27,13 @@ public class BackgroundTask extends AsyncTask<String, String, String> {
     Context ctx;
     //AlertDialog alertDialog;
     String method;
-    TextView r = null;
+    Login login;
+
 
     BackgroundTask(Context ctx, Login l) {
         ctx = this.ctx;
         Log.d("check 2.5", "login: ");
-        r = l.res;
+        login = l;
 
     }
 
@@ -106,7 +107,7 @@ public class BackgroundTask extends AsyncTask<String, String, String> {
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
         Log.d("check 5", "login: ");
-        r.setText(result);
+        login.JSON = result;
 
     }
 }

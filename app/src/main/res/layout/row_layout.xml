@@ -8,6 +8,7 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/name"
             android:layout_width="120dp"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -15,6 +16,7 @@
             android:textAppearance="?android:textAppearanceMedium" />
 
         <TextView
+            android:id="@+id/type"
             android:layout_width="120dp"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -22,6 +24,7 @@
             android:textAppearance="?android:textAppearanceMedium" />
 
         <TextView
+            android:id="@+id/no"
             android:layout_width="120dp"
             android:layout_height="match_parent"
             android:gravity="center"
