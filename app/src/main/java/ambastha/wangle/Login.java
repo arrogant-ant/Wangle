@@ -1,8 +1,6 @@
 package ambastha.wangle;
 
-import android.app.Activity;
-import android.content.Context;
-import android.os.AsyncTask;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -10,18 +8,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLEncoder;
 
 /**
  * Created by Sabita_Sant on 09/03/17.
@@ -31,6 +17,7 @@ public class Login extends AppCompatActivity {
 
     String loginID, loginPass;
     EditText empID , pass;
+    String JSON;
     TextView res;
 
 
@@ -53,6 +40,16 @@ public class Login extends AppCompatActivity {
         BackgroundTask backgroundTask= new BackgroundTask(this,this);
         backgroundTask.execute(method,loginID,loginPass);
         Log.d("check 2", "login: ");
+    }
+
+    public void parseJSON() {
+        if (JSON == null) {
+            Toast.makeText(this, "NO data received", Toast.LENGTH_LONG).show();
+        } else {
+            Intent intent = new Intent(getApplicationContext(), DisplayRequest.class);
+            intent.putExtra("json_data", JSON);
+            startActivity(intent);
+        }
     }
 
 
