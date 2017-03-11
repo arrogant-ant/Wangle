@@ -21,7 +21,7 @@ public class Login extends AppCompatActivity {
 
     String loginID, loginPass;
     EditText empID , pass;
-    String JSON;
+    String JSON, status;
     TextView res;
 
 
@@ -64,12 +64,17 @@ public class Login extends AppCompatActivity {
             JSONObject jsonObject = null;
             try {
                 jsonObject = new JSONObject(JSON);
-                JSONArray jsonArray = jsonObject.getJSONArray("Array name");
-                JSONObject j = jsonArray.getJSONObject(0);
-                res.setText(j.getString("success") + j.getString("type"));
+                // JSONArray jsonArray = jsonObject.getJSONArray("Array name");
+                //JSONObject j = jsonArray.getJSONObject(0);
+                if (jsonObject.getString("status").equals("successful")) {
+                    if (jsonObject.get("is_admin").equals("true"))
+                        res.setText("hey pc");
 
+                    else
+                        res.setText("hey site manager");
+                } else
+                    res.setText("login failed");
             } catch (JSONException e) {
-
                 e.printStackTrace();
             }
 

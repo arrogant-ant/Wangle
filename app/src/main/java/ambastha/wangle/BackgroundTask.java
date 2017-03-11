@@ -51,7 +51,7 @@ public class BackgroundTask extends AsyncTask<String, String, String> {
 
         Log.d("check 3", "login: ");
         HttpURLConnection connection = null;
-        String loginURL = "http://wangle.16mb.com/login.php";
+        String loginURL = "http://wangle.16mb.com/another_try.php";
         method = params[0];
         if (method.equals("Login")) {
             Log.d("check 4", "login: ");
