@@ -23,25 +23,25 @@ import java.net.URLEncoder;
  * Created by shubham on 3/8/2017.
  */
 
-public class BackgroundTask extends AsyncTask<String,String,String> {
+public class BackgroundTask extends AsyncTask<String, String, String> {
     Context ctx;
     //AlertDialog alertDialog;
     String method;
-    TextView r=null;
+    TextView r = null;
 
     BackgroundTask(Context ctx, Login l) {
         ctx = this.ctx;
         Log.d("check 2.5", "login: ");
-        r=l.res;
+        r = l.res;
 
     }
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-      // alertDialog= new AlertDialog.Builder(ctx).create();
+        // alertDialog= new AlertDialog.Builder(ctx).create();
         Log.d("check 2.7", "login: ");
-      //  alertDialog.setTitle("Login Info");
+        //  alertDialog.setTitle("Login Info");
         Log.d("check 2.9", "login: ");
     }
 
