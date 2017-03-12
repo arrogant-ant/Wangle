@@ -29,8 +29,7 @@ public class DisplayRequest extends AppCompatActivity {
         setContentView(R.layout.activity_display_request);
         Log.d("check 1", "adapter");
 
-        rAdapter = new RequestAdapter(getApplicationContext(), R.layout.row_layout, list);
-        listview.setAdapter(rAdapter);
+
         Log.d("check 2", "adapter");
         json = getIntent().getExtras().toString();
         try {
@@ -53,5 +52,7 @@ public class DisplayRequest extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        rAdapter = new RequestAdapter(getApplicationContext(), R.layout.row_layout, list);
+        listview.setAdapter(rAdapter);
     }
 }
