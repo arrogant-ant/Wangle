@@ -55,11 +55,6 @@
 
         <!-- Link to Login Screen -->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hey Nigga"
-            android:id="@+id/result"/>
     </LinearLayout>
 
 </LinearLayout>
